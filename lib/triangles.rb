@@ -20,4 +20,19 @@ class Triangles
       return false
     end
   end
+
+  define_method(:what_type) do
+    if self.is_triangle?
+      if @side_1 == @side_2 && @side_1 == @side_3
+        return "Equilateral"
+      elsif @side_1 == @side_2 || @side_1 == @side_3 || @side_2 == @side_3
+        return "Isosceles"
+      elsif @side_1 != @side_2 && @side_1 != @side_3 && @side_2 != @side_3
+        return "Scalene"
+      end
+    else
+      return "Not a Triangle"
+    end
+
+  end
 end
